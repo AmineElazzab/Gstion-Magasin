@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Produite</title>
+    <link rel="stylesheet" href="css/modifier_style.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="lab la-accusoft"></span> <span>IL MEGLIO</span></h2>
+        </div>
+
+        <div class="sidebare-menu">
+            <ul>
+                <li>
+                    <a href="index.html" >
+                        <span class="las la-igloo"></span>
+                        <span>DashBoard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="list_produite.html" >
+                        <span class="las la-shopping-bag"></span>
+                        <span>List des Produit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Add_Product.html">
+                        <span class="las la-clipboard-list"></span>
+                        <span>Ajouter un Produit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Add_Product.html" class="active">
+                        <span class="las la-edit"></span>
+                        <span>Modifier un Produit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Client.html">
+                        <span class="las la-users"></span>
+                        <span>Client</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <span class="las la-address-book"></span>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                <!-- Dashboard -->
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="img/golden.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>John Doe</h4>
+                    <a href="#"><small>Déconexion</small></a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main -->
+    <div class="con">
+        <div class="contain">
+            <div class="contact-box">
+                <select name="" id="" class="field">
+                    <option value="">Select Id</option>
+                </select>
+                <input type="text" placeholder="Nom" class="field">
+                <input type="text" placeholder="Prix" class="field">
+                <select name="" id="" class="field">
+                    <option value="">Select Catégorie</option>
+                </select>
+                <textarea placeholder="Description"  class="field"></textarea>
+                <div class="div_fill">
+                    <p id="text">telecharger image</p>
+                    <input type="file" name="" id="btn_envira">
+                </div>
+                <button>Modifier</button>
+            </div>
+        </div>
+    </div>
+    <!--End Main-->
+
+
+</body>
+</html>
