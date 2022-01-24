@@ -59,7 +59,9 @@
     font-size: 1.5rem;
     padding-left: 0.7rem;
 }
-
+input[type="checkbox"]{
+    display: none;
+}
 #nav-toggle:checked + .sidebar{
    width: 70px;
 }
@@ -212,6 +214,20 @@ table th{
 table tbody tr:nth-child(even){
     background-color: #f5f5f5;
 }
+
+.card-body table tbody tr img{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 6px #222;
+}
+.card-body table tbody tr td span a:hover{
+    text-decoration: underline;
+}
+
 @media(max-width: 500px){
     table thead{
         display: none;
@@ -372,4 +388,32 @@ table tbody tr:nth-child(even){
     #nav-toggle:checked ~ .main-content{
         margin-left: 0rem !important;
     }
+}
+
+/*  */
+.action_btn{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action_btn a{
+    text-decoration: none;
+    /* color: #444; */
+    color: #fff;
+    background-color: #fff;
+    /* border: 1px solid orange; */
+    display: inline-block;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+.action_btn a:first-child{
+    /* border-color: #00FF00; */
+    background-color: #00FF00;
+}
+.action_btn a:last-child{
+    /* border-color: red; */
+    background-color: #FF1F1F;
 }

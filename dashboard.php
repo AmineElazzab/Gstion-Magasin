@@ -1,3 +1,21 @@
+<?php 
+include('config.php');
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
+    $sql="SELECT * FROM produit";
+    $res=$conn->query($sql);
+    $row=mysqli_num_rows($res);
+
+    $sqlreq="SELECT * FROM user";
+    $resq=mysqli_query($conn,$sqlreq);
+    // $resq=$conn->query($sqlreq);
+    $roww=mysqli_num_rows($resq);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +24,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
     
 </head>
@@ -20,41 +37,31 @@
         <div class="sidebare-menu">
             <ul>
                 <li>
-                    <a href="index.html" class="active">
+                    <a href="dashboard.php" class="active">
                         <span class="las la-igloo"></span>
                         <span>DashBoard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="list_produite.html">
+                    <a href="list_produite.php">
                         <span class="las la-shopping-bag"></span>
                         <span>List des Produit</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Add_Product.html">
+                    <a href="Add_Product.php">
                         <span class="las la-clipboard-list"></span>
                         <span>Ajouter un Produit</span>
                     </a>
                 </li>
                 <li>
-                    <a href="modifier_produite.html" >
-                        <span class="las la-edit"></span>
-                        <span>Modifier un Produit</span>
+                    <a href="search.php">
+                        <!-- <i class="las la-search"></i> -->
+                        <span class="las la-search"></span>
+                        <span>chercher un produit</span>
                     </a>
                 </li>
-                <li>
-                    <a href="Client.html">
-                        <span class="las la-users"></span>
-                        <span>Client</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        <span class="las la-address-book"></span>
-                        <span>Contact</span>
-                    </a>
-                </li>
+                
             </ul>
         </div>
     </div>
@@ -71,8 +78,8 @@
             <div class="user-wrapper">
                 <img src="img/golden.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4>John Doe</h4>
-                    <a href="#"><small>Déconexion</small></a>
+                    <h4>Mohammed</h4>
+                    <a href="logout.php"><small>Déconexion</small></a>
                 </div>
             </div>
 
@@ -82,17 +89,17 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>54</h1>
-                        <span>Client</span>
+                        <h1><?php echo $roww;?></h1>
+                        <span>Utilisateur</span>
                     </div>
                     <div>
-                        <span class="las la-users"></span>
+                        <span class="las la-user-circle"></span>
                     </div>
                 </div>
 
                 <div class="card-single">
                     <div>
-                        <h1>124</h1>
+                        <h1><?php echo $row;?></h1>
                         <span>Produite</span>
                     </div>
                     <div>
@@ -100,15 +107,6 @@
                     </div>
                 </div>
 
-                <div class="card-single">
-                    <div>
-                        <h1>79</h1>
-                        <span>Demande</span>
-                    </div>
-                    <div>
-                        <span class="las la-clipboard-list"></span>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
