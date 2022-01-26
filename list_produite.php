@@ -7,7 +7,8 @@ if (!isset($_SESSION['username'])) {
     include('config.php');
 
     $sql="SELECT id,nom,prix,categorie,imag FROM produit";
-    $res=$conn->query($sql);
+    // $res=$conn->query($sql);
+    $res=mysqli_query($con,$sql);
     // $data=mysqli_fetch_assoc($con->query($sql));
     // $num=mysqli_num_rows($con->query($sql));
 ?>
@@ -126,9 +127,16 @@ if (!isset($_SESSION['username'])) {
                                                             <img src= <?php  echo "img/".$row["imag"] ; ?> >
                                                         </td>
                                                         <td>
-                                                            <span class="action_btn">
+                                                            <form action="modifier_produite.php" method="post">
+                                                                <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                                                <span class="action_btn">
+                                                                    <button type="submit" name="submit">Modifier</button>
+                                                                    <button type="submit" name="submit">Supprimer</button>
+                                                                </span>
+                                                            </form>
+                                                            <!-- <span class="action_btn">
                                                             <a href="modifier_produite.php?updateid=<?php echo $row['id']?>">Modifier</a><a href="delete.php?deletid=<?php echo $row['id'];?>">Supprimer</a>
-                                                            </span>
+                                                            </span> -->
                                                         </td>
                                                     </tr>
                                             
